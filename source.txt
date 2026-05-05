@@ -35,3 +35,14 @@ android_build:
 lunch arrow_chiron-user[debug]
 make bacon
 
+# TIPS
+to sync vendor/kernel:
+git clone https://github.com/LineageOS/android_kernel_xiaomi_msm8998 -b lineage-20 kernel/xiaomi/msm8998
+git clone https://github.com/TheMuppets/proprietary_vendor_xiaomi_msm8998-common -b lineage-20 vendor/xiaomi/msm8998-common
+git clone https://github.com/TheMuppets/proprietary_vendor_xiaomi_chiron  -b lineage-20 vendor/xiaomi/chiron
+
+if you need regen vendor:
+cd device/xiaomi/chiron
+FOR DEVICE TREE: bash extract-files.sh --only-target --no-cleanup DUMP
+FOR COMMON TREE: bash extract-files.sh --only-common --no-cleanup DUMP
+
