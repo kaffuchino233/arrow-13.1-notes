@@ -1,0 +1,37 @@
+# Before sync
+1. Fork manifest
+android_manifest:
+git reset --hard d18d034ab2eebce586054b60927f35127fe68079
+
+Then 
+repo init -u repo init -u https://github.com/USERNAME/android_manifest.git -b arrow-13.1
+repo sync
+
+# After sync
+android_frameworks_base:
+git reset --hard aae46c6d3d8dc546cd0743c14c1a35bfbd1441fd
+
+android_packages_modules_Bluetooth:
+git reset --hard 527c82478ae60439313c0a22018980e9ab47fc25
+
+android_packages_apps_Settings:
+3c66c462d08a009f31034fd1ef3bf1f18970204c
+
+android_packages_apps_Nfc:
+fc28844ee0a54cc4a8353e46495ccd28b2c7f9d0
+
+android_packages_apps_Camera2:
+8ad89c33cff8d5300f32d4f16d5be3871cf081e0
+
+android_frameworks_av:
+19945e8a6e1c6d7e98f3d0bee33c4f09aab4eadd
+
+android_build:
+5f6678e58c34a624f3053196682dbd8b4a65ec45
+
+
+# Build
+. build/envsetup.sh
+lunch arrow_chiron-user[debug]
+make bacon
+
